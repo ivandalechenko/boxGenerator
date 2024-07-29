@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Isometric Cubes</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    .controls {
+      margin: 10px;
+    }
+
+    .controls input {
+      margin-right: 5px;
+    }
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video,
+    button {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    .dnone {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    input,
+    textarea {
+      box-sizing: border-box;
+    }
+
+    .free_img {
+      width: 0px;
+      height: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: black;
+    }
+
+    button {
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="controls">
+    <label>Width: <input type="number" id="width" value="1"></label>
+    <label>Height: <input type="number" id="height" value="1"></label>
+    <label>Depth: <input type="number" id="depth" value="1"></label>
+    <!-- <button id="generate">Generate Cube</button> -->
+    <button id="save">Save as PNG</button>
+  </div>
+  <canvas id="canvas"></canvas>
+  <canvas id="canvas4export" style="display:none;"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
