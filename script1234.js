@@ -12,6 +12,7 @@ const scene = new THREE.Scene();
 // Create a camera
 const aspect = 1;
 const camera = new THREE.OrthographicCamera(-aspect, aspect, 1, -1, 0.1, 1000);
+// camera.position.set(2, 1.64, 2);
 camera.position.set(2, 1.64, 2);
 camera.lookAt(scene.position);
 
@@ -58,17 +59,18 @@ function createCube(width, height, depth, rotation) {
     scene.add(frontLines);
     scene.add(backLines);
 }
-
-// Create a cube with specified dimensions and rotation
-const angles = [0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5, 360];
-let currentAngleIndex = 0; // Start with 0 degrees
-
 // Function to update the cube with a new rotation and dimensions
 function updateCube(rotation, width, height, depth) {
     scene.clear(); // Clear previous cubes
     createCube(width * 0.115, height * 0.115, depth * 0.115, rotation);
     renderer.render(scene, camera);
 }
+
+
+// Create a cube with specified dimensions and rotation
+// const angles = [0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5, 360];
+const angles = [0, 18.5, 45, 71.5, 90, 108.5, 135, 161.5, 180, 198.5, 225, 251.5, 270, 288.5, 315, 341.5, 360];
+let currentAngleIndex = 3; // Start with 0 degrees
 
 // Initial cube
 updateCube(angles[currentAngleIndex], 1, 1, 1);
