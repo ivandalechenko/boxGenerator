@@ -12,7 +12,7 @@ const scene = new THREE.Scene();
 // Create a camera
 const aspect = 1;
 const camera = new THREE.OrthographicCamera(-aspect, aspect, 1, -1, 0.1, 1000);
-camera.position.set(2, 2.3, 2);
+camera.position.set(2, 1.64, 2);
 camera.lookAt(scene.position);
 
 // Add lighting
@@ -111,6 +111,21 @@ document.addEventListener('keydown', (event) => {
     updateCube(angles[currentAngleIndex], width, height, depth);
 });
 
+
+document.getElementById('left').onclick = () => {
+    currentAngleIndex = (currentAngleIndex - 1 + angles.length) % angles.length;
+    const width = parseFloat(document.getElementById('width').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const depth = parseFloat(document.getElementById('depth').value);
+    updateCube(angles[currentAngleIndex], width, height, depth);
+}
+document.getElementById('right').onclick = () => {
+    currentAngleIndex = (currentAngleIndex + 1) % angles.length;
+    const width = parseFloat(document.getElementById('width').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const depth = parseFloat(document.getElementById('depth').value);
+    updateCube(angles[currentAngleIndex], width, height, depth);
+}
 
 async function processImage(dataURL) {
     return new Promise((resolve, reject) => {
